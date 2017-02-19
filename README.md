@@ -1,4 +1,4 @@
-[NGINX](images/nginx-img.jpg)
+[!NGINX](images/nginx-img.jpg)
 
 # NGINX WebServer Administration
 
