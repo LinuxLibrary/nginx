@@ -1,1 +1,1 @@
-# Nginx WebServer Administration
+# Nginx WebServer
