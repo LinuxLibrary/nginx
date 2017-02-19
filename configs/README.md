@@ -1,1 +1,1 @@
-# NGINX WebServer Administration
+# NGINX WebServer Configurations
