@@ -1,4 +1,4 @@
-[!NGINX](images/nginx-img.jpg)
+![NGINX](images/nginx-img.jpg)
 
 # NGINX WebServer Administration
 
@@ -10,7 +10,7 @@ NGINX is one of a handful of servers written to address the [C10K problem](http:
 
 # Overview of nginx Architecture
 
-[nginx-arch](/images/nginx-arch.jpg)
+![nginx-arch](/images/nginx-arch.jpg)
 
 Traditional process- or thread-based models of handling concurrent connections involve handling each connection with a separate process or thread, and blocking on network or input/output operations. Depending on the application, it can be very inefficient in terms of memory and CPU consumption. Spawning a separate process or thread requires preparation of a new runtime environment, including allocation of heap and stack memory, and the creation of a new execution context. Additional CPU time is also spent creating these items, which can eventually lead to poor performance due to thread thrashing on excessive context switching. All of these complications manifest themselves in older web server architectures like Apache's. This is a tradeoff between offering a rich set of generally applicable features and optimized usage of server resources.
 
