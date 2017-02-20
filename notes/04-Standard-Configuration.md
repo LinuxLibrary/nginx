@@ -13,7 +13,7 @@
 include /etc/nginx/vhost.d/*.conf;
 ```
 
-- If we are hosting multiple websites then we can have our ***<sitename>.d*** directory in place of ***vhost.d***. This will help us in hosting multiple websites to avoid confusion.
+- If we are hosting multiple websites then we can have our ***<SITE_NAME>.d*** directory in place of ***vhost.d***. This will help us in hosting multiple websites to avoid confusion.
 - Now let us create a directory named ***vhost.d*** and prepare our custom config.
 
 ```
