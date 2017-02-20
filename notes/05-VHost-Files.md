@@ -46,5 +46,6 @@ server {
 
 ```
 # nginx -s reload
+# elinks http://www.lltest1.ll
 # elinks http://lltest1
 ```
