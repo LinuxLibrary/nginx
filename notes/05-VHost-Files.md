@@ -17,7 +17,7 @@
 ```
 # cd /etc/nginx/vhost.d/
 # vi www.lltest1.ll.conf
-
+[www.lltest1.ll.conf](/configs/vhost.d/www.lltest1.ll.conf)
 server {
 	listen 80;
 	
