@@ -37,9 +37,8 @@ server {
 - Now let us create the root directory for this site and an index file
 
 ```
-# cd /var/www/html
-# mkdir lltest1
-# cd lltest1
+# mkdir -p /var/www/html/lltest1
+# cd /var/www/html/lltest1
 # echo "WELCOME TO LINUX_LIBRARY_TESTING SITE" > index.html
 ```
 
