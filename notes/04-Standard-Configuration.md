@@ -22,7 +22,7 @@ include /etc/nginx/vhost.d/*.conf;
 # cp -prv conf.d/default.conf vhost.d/
 ```
 
-- If you are unable to find the default.conf file in conf.d directory then you can copy ![default.conf](/configs/vhost.d/default.conf)
+- If you are unable to find the default.conf file in conf.d directory then you can copy [default.conf](/configs/vhost.d/default.conf)
 - Comment the ***include*** directive which points to load the default configs from the ***/etc/nginx/default.d***
 - Change the document root to ***/var/www/html*** from ***/usr/share/nginx/html*** in the ***location*** section.
 - Create the document root and create and index file.
