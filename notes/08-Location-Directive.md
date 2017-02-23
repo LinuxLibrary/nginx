@@ -51,3 +51,17 @@ The location_match in the above defines what Nginx should check the request URI 
 	    ....
 	}
 	```
+
+Nginx evaluates the possible location contexts by comparing the request URI to each of the locations. It does this using the following algorithm:
+
+	- Nginx begins by checking all prefix-based location matches (all location types not involving a regular expression). It checks each location against the complete request URI.
+	- First, Nginx looks for an exact match. If a location block using the = modifier is found to match the request URI exactly, this location block is immediately selected to serve the request.
+	- If no exact (with the = modifier) location block matches are found, Nginx then moves on to evaluating non-exact prefixes. It discovers the longest matching prefix location for the given request URI, which it then evaluates as follows:
+		- If the longest matching prefix location has the ^~ modifier, then Nginx will immediately end its search and select this location to serve the request.
+		- If the longest matching prefix location does not use the ^~ modifier, the match is stored by Nginx for the moment so that the focus of the search can be shifted.
+	- After the longest matching prefix location is determined and stored, Nginx moves on to evaluating the regular expression locations (both case sensitive and insensitive). If there are any regular expression locations within the longest matching prefix location, Nginx will move those to the top of its list of regex locations to check. Nginx then tries to match against the regular expression locations sequentially. The first regular expression location that matches the request URI is immediately selected to serve the request.
+	- If no regular expression locations are found that match the request URI, the previously stored prefix location is selected to serve the request.
+
+It is important to understand that, by default, Nginx will serve regular expression matches in preference to prefix matches. However, it evaluates prefix locations first, allowing for the administer to override this tendency by specifying locations using the = and ^~ modifiers.
+
+It is also important to note that, while prefix locations generally select based on the longest, most specific match, regular expression evaluation is stopped when the first matching location is found. This means that positioning within the configuration has vast implications for regular expression locations.
