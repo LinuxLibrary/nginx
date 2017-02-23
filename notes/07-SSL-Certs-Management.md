@@ -43,7 +43,7 @@ An optional company name []:
 # cp -prv server.key server.key.`date +"%Y%m%d"`.bak
 ```
 
-- Now we can use the backup key file as input and the main file as the output with an empty phrase to remove the pass phrase.
+- Now we can use the backup key file as input and the main file as the output with the pass phrase to remove the pass phrase.
 
 ```
 # openssl rsa -in server.key.`date +"%Y%m%d"`.bak -out server.key
