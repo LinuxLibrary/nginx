@@ -10,16 +10,6 @@ server {
 		root /var/www/html/lltest1/;
 		index index.html index.htm index.php;
 	}
-
-	location /blog {
-		root /var/www/html/lltest1;
-		rewrite ^/blog/(.*)$ http://www.lltest1.ll/blogs/$1 permanent;
-	}
-
-	location /FAQ {
-		root /var/www/html/lltest1/blogs;
-		rewrite ^/FAQ/(.*)$ http://www.lltest1.ll/FAQs/$1 permanent;
-	}
 	
 	location /rhel7/ {
 		alias /u01/yum/rhel7/;
@@ -27,11 +17,6 @@ server {
 		autoindex on;
 		try_files $uri $uri/ =404;
 	}
-
-#	location /blog {
-#		return 301 http://linux-library.blogspot.in;
-#	}
-
 }
 
 server {
