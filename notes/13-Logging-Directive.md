@@ -21,3 +21,16 @@ error_log /var/log/nginx/lltest1.error.http.log;
 access_log /var/log/nginx/lltest1.access.https.log;
 error_log /var/log/nginx/lltest1.error.https.log;
 ```
+
+- One more thing about logging we need to keep in mind is that is our webserver is getting more traffic then as the logs will being constantly being written then we'll have to face issue with the machine as we'll have lot of I/O happening on the server.
+- To overcome this situation we need to use buffers for the logs we have lot of I/O on.
+- Means we will be having more I/O for the access log. Then we need to use buffer for that.
+- To do this we just need to add the ***buffer*** and its size at the end of the access_log line.
+
+```
+access_log /var/log/nginx/lltest1.access.https.log combined buffer=32k;
+```
+
+- The contents of the buffer will be written to the log file only when it is filled up and once the contents of the buffer written to the log then the contents of the buffer will be flushed.
+
+
