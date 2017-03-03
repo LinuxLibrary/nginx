@@ -13,3 +13,11 @@
 access_log /var/log/nginx/lltest1.access.http.log;
 error_log /var/log/nginx/lltest1.error.http.log;
 ```
+
+- In the same way we can have separate log files to log our https traffic.
+- Add the following lines under the server_name directive in the server section for https block.
+
+```
+access_log /var/log/nginx/lltest1.access.https.log;
+error_log /var/log/nginx/lltest1.error.https.log;
+```
