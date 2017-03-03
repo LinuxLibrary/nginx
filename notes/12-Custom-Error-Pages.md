@@ -14,7 +14,7 @@
 # vi /etc/nginx/vhost.d/www.lltest1.ll.conf
 
 error_page 404 = /404.html;
-location = /403.html {
+location = /404.html {
 	root /var/www/html/lltest1;
 	internal;
 }
