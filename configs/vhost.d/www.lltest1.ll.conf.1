@@ -5,6 +5,15 @@ server {
 #        index index.html index.htm index.php;
 
         server_name www.lltest1.ll lltest1;
+
+	access_log /var/log/nginx/lltest1.access.http.log;
+	error_log /var/log/nginx/lltest1.error.http.log;
+
+	error_page 404 = /404.html;
+	location = /404.html {
+		root /var/www/html/lltest1;
+		internal;
+	}
 	
 	location / {
 		root /var/www/html/lltest1/;
@@ -18,12 +27,13 @@ server {
 
 	location /FAQ {
 		root /var/www/html/lltest1/blogs;
-		rewrite ^/FAQ/(.*)$ http://www.lltest1.ll/FAQs/$1 permanent;
+		rewrite ^/FAQ/(.*)$ http://www.lltest1.ll/blog/FAQs/$1 permanent;
 	}
 	
 	location /rhel7/ {
-		alias /u01/yum/rhel7/;
-		index index.html index.htm index.php;
+		root /u01/yum;
+#		alias /u01/yum/rhel7/;
+#		index index.html index.htm index.php;
 		autoindex on;
 		try_files $uri $uri/ =404;
 	}
