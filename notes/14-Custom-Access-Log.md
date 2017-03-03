@@ -2,11 +2,15 @@
 
 - We can customize the Nginx logging format as per our choice.
 - For customizing we need to use the ***log_format*** directive.
-- Under the ***server_name*** directive we need to add a ***log_format*** directive followed by a name for this format.
-
+- Within the `http` section of the nginx base config file we need to add a ***log_format*** directive followed by a name for this format.
 
 ```
+# vi /etc/nginx/nginx.conf
+
 log_format LLAccessFormat 'Remote IP: $remote_addr - Time Request: $time_local - User/Browser Agent: $http_user_agent';
+```
+- By default the logging uses the `combined` format. If we want to use our custom format the we need to replace `combined` with the name of our custom log format in the `access_log` directive
+
 ```
 
 - We can find most of the tags explained below. The log format can contain common variables, and variables that exist only at the time of a log write:
